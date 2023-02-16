@@ -1,0 +1,52 @@
+# my_hhkb_ahk
+
+MyHHKB.ahk
+わたしのHHKBセッティング
+
+職場のPCは他の人が使うことがあるために「自分はすべてHHKBで作業したい」「他の人が自分のPCをさわる時には普通に日本語配列の戻したい」ので作りました。
+
+## 環境
+
+Windows11 (2023-02時点)
+HHKB 英語配列 Type-S
+
+## 要件
+
+* 左右の◇キーを半角、全角に設定する
+* Windowsの日本語配列と英語配列を切り替え可能にする
+* 他の人が自分のPCを使うときに日本語配列に戻せること
+
+## 初期設定
+
+changekeyで「全角/半角」キーをF13(スキャンコード:0x0064)に変更する
+
+## 実行
+
+以下を実行する
+
+* MyScript.ahk(メインの実行スクリプト)
+  個人的な設定がはいってます。
+  alt-ime-ahkも実行しています。
+  
+* jp2usKeylayout.ahk(日本語配列->英語配列変更スクリプト)
+
+席を離れるときは上記を終了し、以下を実行
+
+* nomKeylayout.ahk(F13を「全角/半角」キーにするスクリプト)
+
+このようにすることで他の人が別に接続されたキーボードで操作できるようになります。
+
+## 参考
+
+[【キーマップ変更】日本語配列キーボードを英語配列に変更【英語配列のメリットについて】](https://www.nintechblog.com/keymap-jis-us/)
+少し変更してHHKB 英語配列 Type-S用にしてます。
+
+[HHKB Classic 英語配列を使うときのおすすめ設定方法](https://yashulog.com/recommended-setting-of-hhkb-classic/)
+そのまま使っています。
+
+[karakaram/alt-ime-ahk github](https://github.com/karakaram/alt-ime-ahk)
+記事↓
+[WindowsのAlt空打ちで日本語入力(IME)を切り替えるツールを作った](https://www.karakaram.com/alt-ime-on-off/)
+そのままリポジトリに取り込ませてもらいました。
+
+
