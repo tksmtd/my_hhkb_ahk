@@ -71,3 +71,8 @@ F13::Send,{``}  ;         [F13] -> `
 ; Alt + b で単語を戻る
 !b::send,^{Left}
 
+; ■■■Vivaldi上でのショートカット■■
+#IfWinActive ahk_exe vivaldi.exe
+; Alt + e で gi -> ctrl + a
+!e::send, gi^a
+
