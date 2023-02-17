@@ -1,5 +1,5 @@
-Stop-Process -Name "AutohotkeyU64"
+Stop-Process -Name "Autohotkey"
 
 Start-Sleep -s 1
 
-. "C:\Program Files\AutoHotkey\AutoHotkeyU64.exe" ./nomKeylayout.ahk
+. "C:\Program Files\AutoHotkey\AutoHotkey.exe" ./nomKeylayout.ahk
