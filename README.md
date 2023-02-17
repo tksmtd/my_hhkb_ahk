@@ -18,7 +18,7 @@ HHKB 英語配列 Type-S
   
 ## 初期設定
   
-changekeyで「全角/半角」キーをF13(スキャンコード:0x0064)に変更する  
+[Change Key](https://forest.watch.impress.co.jp/library/software/changekey/)で「全角/半角」キーをF13(スキャンコード:0x0064)に変更する  
   
 ## 実行
   
