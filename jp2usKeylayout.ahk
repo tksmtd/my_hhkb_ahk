@@ -14,7 +14,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; 1段目
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;+\::Send,{~} ; Shift + \ [\] -> ~
 +2::Send,{@} ; Shift + 2 ["] -> @
 +6::Send,{^} ; Shift + 6 [&] -> ^
 +7::Send,{&} ; Shift + 7 ['] -> &
@@ -24,7 +23,11 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 +-::Send,{_} ; Shift + - [=] -> _
 ^::Send,{=}  ;           [^] -> =
 +^::Send,{+} ; Shift + ^ [~] -> +
-]::Send,{\} ;            []] -> \
+]::Send,{\}  ;           []] -> \
+
+; `[~]キーは日本語配列では半角/全角キーに認識されているのでchangekeyにてF13キーに置き換えてから`[~]キーに変更する
+F13::Send,{``}  ;         [F13] -> `
++F13::Send,{~} ; Shift + [F13] -> ~
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; 2段目
@@ -41,4 +44,3 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 :::Send,{'}  ;           [:] -> '
 *::Send,{"}  ; Shift + : [*] -> "
 +]::|        ; Shift + ] [}] -> |
-;]::+@        ;           []] -> `
