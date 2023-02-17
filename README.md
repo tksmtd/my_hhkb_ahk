@@ -3,7 +3,7 @@
 MyHHKB.ahk  
 わたしのHHKBセッティング  
   
-職場のPCは他の人が使うことがあるために「自分はすべてHHKBで作業したい」「他の人が自分のPCをさわる時には普通に日本語配列の戻したい」ので作りました。  
+職場のPCは他の人が使うことがあるために「自分はすべてHHKBで作業したい」「他の人が自分のPCをさわる時には普通に日本語配列に戻したい」ので作りました。  
   
 ## 環境
   
@@ -13,12 +13,20 @@ HHKB 英語配列 Type-S
 ## 要件
   
 * 左右の◇キーを半角、全角に設定する
-* Windowsの日本語配列と英語配列を切り替え可能にする
+* Windowsの日本語配列と英語配列をAutohotkeyだけで切り替え可能にする
 * 他の人が自分のPCを使うときに日本語配列に戻せること
   
 ## 初期設定
   
 [Change Key](https://forest.watch.impress.co.jp/library/software/changekey/)で「全角/半角」キーをF13(スキャンコード:0x0064)に変更する  
+  
+DIPスイッチ  
+1:On  
+2:Off // WinMode  
+3:On // Delete=BS  
+4:On // Left◇=Fn
+5:On // ◇=Alt, Alt=◇  
+6:On // Power Savind Disabled
   
 ## 実行
   
