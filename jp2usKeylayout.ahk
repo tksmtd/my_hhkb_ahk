@@ -44,3 +44,30 @@ F13::Send,{``}  ;         [F13] -> `
 :::Send,{'}  ;           [:] -> '
 *::Send,{"}  ; Shift + : [*] -> "
 +]::|        ; Shift + ] [}] -> |
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 以下は個人的な設定
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; MyScriptにAlt修飾のスクリプトを記載しても動かないのでこちらに書く
+
+; Vim Like Settings
+
+; Blindが効かないのはalt-ime-ahkが原因か
+
+; Alt + hjkl で←↓↑→
+!h::Send,{Left}
+!j::Send,{Down}
+!k::Send,{Up}
+!l::Send,{Right}
+
+; Alt + i でHome
+!i::Send,{Home}
+
+; Alt + a でEnd
+!a::Send,{End}
+
+; Alt + w で単語を進む
+!w::send,^{Right}
+; Alt + b で単語を戻る
+!b::send,^{Left}
+

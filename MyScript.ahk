@@ -16,27 +16,15 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory
 ; -> 別途jp2usKeylayoutを起動
 
 
-
-
 ; 他の人が使うとき
 ; -> MyScript.ahkを終了する
 ; -> nomKeylayout.ahkを起動する
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; 無変換+Alt+r でスクリプトを再読み込み
-; 無変換+Alt+e でスクリプトを編集
-; あんまり使わないのでOFF	
-vk1D & r::
-  If GetKeyState("Alt", "P") {
-    Reload
-  }
-  Return
-vk1D & e::
-  If GetKeyState("Alt", "P") {
-    Edit
-  }
-  Return
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 共通設定
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; ■■■使わないキーを無効にする■■■
 ; NumLock
