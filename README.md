@@ -3,7 +3,7 @@
 MyHHKB.ahk  
 わたしのHHKBセッティング  
   
-職場のPCは他の人が使うことがあるために「自分はすべてHHKBで作業したい」「他の人が自分のPCをさわる時には普通に日本語配列に戻したい」ので作りました。  
+職場のPCは他の人が使うことがあるために「自分はすべてHHKBで作業したい」「他の人が自分のPCをさわる時には普通の日本語配列に戻したい」ので作りました。  
   
 ## 環境
   
@@ -26,23 +26,23 @@ DIPスイッチ
 3:On // Delete=BS  
 4:On // Left◇=Fn
 5:On // ◇=Alt, Alt=◇  
-6:On // Power Savind Disabled
+6:On // Power Saving Disabled
   
 ## 実行
   
 以下を実行する  
   
-* MyScript.ahk(メインの実行スクリプト)
+* MyScript.ahk(メインの実行スクリプト)  
   個人的な設定がはいってます。  
   alt-ime-ahkも実行しています。  
-    
+  
 * jp2usKeylayout.ahk(日本語配列->英語配列変更スクリプト)
   
 席を離れるときは上記を終了し、以下を実行  
   
 * nomKeylayout.ahk(F13を「全角/半角」キーにするスクリプト)
   
-このようにすることで他の人が別に接続されたキーボードで操作できるようになります。  
+このようにすることで他の人が別に接続された日本語配列のキーボードで操作できるようになります。  
   
 ## 参考
   
@@ -50,11 +50,14 @@ DIPスイッチ
 少し変更してHHKB 英語配列 Type-S用にしてます。  
   
 [HHKB Classic 英語配列を使うときのおすすめ設定方法](https://yashulog.com/recommended-setting-of-hhkb-classic/)  
-そのまま使っています。  
+ほんどこれの設定を使わせてもらって自分用にアレンジしてます。
   
 [karakaram/alt-ime-ahk github](https://github.com/karakaram/alt-ime-ahk)  
 記事↓  
 [WindowsのAlt空打ちで日本語入力(IME)を切り替えるツールを作った](https://www.karakaram.com/alt-ime-on-off/)  
 そのままリポジトリに取り込ませてもらいました。  
   
+## 補足
+  
+普段は日本語配列は無変換キーを修飾キーにしてvimっぽいバインドをしています。  
   
