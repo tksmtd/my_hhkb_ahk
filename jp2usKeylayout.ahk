@@ -66,6 +66,9 @@ F13::Send,{``}  ;         [F13] -> `
 ; Alt + a でEnd
 !a::Send,{End}
 
+; Alt + d でBS
+!d::Send,{Backspace}
+
 ; Alt + w で単語を進む
 !w::send,^{Right}
 ; Alt + b で単語を戻る
