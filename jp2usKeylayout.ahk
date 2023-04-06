@@ -26,7 +26,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ]::Send,{\}  ;           []] -> \
 
 ; `[~]キーは日本語配列では半角/全角キーに認識されているのでchangekeyにてF13キーに置き換えてから`[~]キーに変更する
-F13::Send,{``}  ;         [F13] -> `
+F13::Send,{``} ;         [F13] -> `
 +F13::Send,{~} ; Shift + [F13] -> ~
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -60,13 +60,19 @@ F13::Send,{``}  ;         [F13] -> `
 !k::Send,{Up}
 !l::Send,{Right}
 
+; Shift + hjkl で←↓↑→
++!h::Send,+{Left}
++!j::Send,+{Down}
++!k::Send,+{Up}
++!l::Send,+{Right}
+
 ; Alt + i でHome
 !i::Send,{Home}
 
 ; Alt + a でEnd
 !a::Send,{End}
 
-; Alt + d でBS
+; Alt + x でDelete
 !d::Send,{Backspace}
 
 ; Alt + w で単語を進む
