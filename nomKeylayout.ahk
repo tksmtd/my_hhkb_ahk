@@ -1,5 +1,27 @@
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory
+; #Warn  ; Enable warnings to assist with detecting common errors.
+
+; ■■■chgkey設定■■■
+
+; [半角/全角] -> F13
+; [CapsLock] -> F14
+
+
 ; F13 -> 半角/全角
 F13::Send, {vkF3sc029}
+
+; Shift+Capslock: 通常使用の動作を割り当てる
+Shift & F13::
+	if(GetKeyState("CapsLock", "T")){
+		SetCapsLockState,AlwaysOff
+	} else {
+		SetCapsLockState,On
+	}
+return
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; 共通設定
@@ -31,6 +53,10 @@ vk1d::vk1d
 ; 中クリックを押しながらスクロールで水平スクロール
 MButton & WheelDown::WheelRight
 MButton & WheelUp::WheelLeft
+
+; win+ctrl+h, win+ctrl+l でデスクトップを切り替え
+#^h::send, #^{Left}
+#^l::send, #^{Right}
 
 
 ; ■■■無変換+でvim keybind■■■
@@ -158,33 +184,6 @@ vk1d & d::
 ;■Optional
 ; 無変換+qでEsc
 vk1D & q:: send, {Esc}
-
-
-;■■■Capslockキー
-; require: changekeyでCapsLockをF13(scancode: 0x0064)に変更
-
-; Shift+Capslock: 通常使用の動作を割り当てる
-Shift & F13::
-	if(GetKeyState("CapsLock", "T")){
-		SetCapsLockState,AlwaysOff
-	} else {
-		SetCapsLockState,On
-	}
-return
-
-; Capslock+m,j,k,l,u,i,o でテンキーにする
-F13 & m::Send, {Numpad0}
-F13 & j::Send, 1
-F13 & k::Send, 2
-F13 & l::Send, 3
-F13 & u::Send, 4
-F13 & i::Send, 5
-F13 & o::Send, 6
-
-; Ctrl+CapsLockでEnterを押したい
-^F13::Send, {Enter}
-
-
 
 ; ■■■Vivaldi上でのショートカット■■
 #IfWinActive ahk_exe vivaldi.exe
