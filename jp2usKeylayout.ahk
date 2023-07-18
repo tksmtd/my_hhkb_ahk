@@ -72,8 +72,11 @@ F13::Send,{``} ;         [F13] -> `
 ; Alt + a でEnd
 !a::Send,{End}
 
+; 無変換+oで行を追加
+!o::send, {End}{Enter}
+
 ; Alt + x でDelete
-!d::Send,{Backspace}
+!x::Send,{Delete}
 
 ; Alt + w で単語を進む
 !w::send,^{Right}

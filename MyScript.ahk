@@ -12,6 +12,12 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory
 
 ; 左右Altで全角と半角を切り替える設定
 #Include alt-ime-ahk.ahk
+
+; テスト中 本元のスクリプト
+; https://w.atwiki.jp/eamat/pages/17.html
+; 
+; #Include IME2.ahk
+
 ; 日本語配列から英語配列にする
 ; -> 別途jp2usKeylayoutを起動
 
@@ -23,8 +29,10 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; 共通設定
+; nomkey設定
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; nomkeylayoutのみで有効
+;    vk1d(無変換)キーはhhkbでは無効!
 
 ; ■■■使わないキーを無効にする■■■
 ; NumLock
@@ -117,7 +125,7 @@ vk1d & g::
   return
 
 ; 無変換+oで行を追加
-vk1d & o::send, {End}{Enter}
+vk1D & o::send, {End}{Enter}
 
 ; 無変換+xで前の1文字を削除
 vk1D & x:: send, {Right}{BS}
