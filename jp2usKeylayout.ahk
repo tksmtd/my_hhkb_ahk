@@ -83,6 +83,20 @@ F13::Send,{``} ;         [F13] -> `
 ; Alt + b で単語を戻る
 !b::send,^{Left}
 
+; Alt  + y コピー、Alt+ yy で行をすべて選択してコピーする
+Alt & y::
+  Keywait, y, U
+  Keywait, y, D T0.2
+  If (ErrorLevel=1){	
+    send, ^c
+  } else {
+    send, {Home}{LShift Down}{End}{LShift Up}^c
+  }
+  return
+
+; Alt + p でペースト
+!p::send,^v
+
 ; ■■■Vivaldi上でのショートカット■■
 #IfWinActive ahk_exe vivaldi.exe
 ; Alt + e で gi -> ctrl + a
