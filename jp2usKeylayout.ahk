@@ -96,7 +96,7 @@ Alt & y::
   return
 
 ; RAlt + [l][;][p][.] で [left][right][up][down]
-  ; >!' はあらゆるキーで試したが動作しなかった為、[l][;][p][.]を[left][right][up][down]をした
+  ; >!' はあらゆるキーで試したが動作しなかった為、[;]['][[][/]はやめて、[l][;][p][.]を[left][right][up][down]をした
 
 >!`;::send, {Right}
 >!p::send, {Up}
