@@ -42,6 +42,7 @@ F13::Send,{``} ;         [F13] -> `
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 +;::Send,{:} ; Shift + ; [+] -> :
 :::Send,{'}  ;           [:] -> '
+
 *::Send,{"}  ; Shift + : [*] -> "
 +]::|        ; Shift + ] [}] -> |
 
@@ -83,7 +84,7 @@ F13::Send,{``} ;         [F13] -> `
 ; Alt + b で単語を戻る
 !b::send,^{Left}
 
-; Alt  + y コピー、Alt+ yy で行をすべて選択してコピーする
+; Alt + y コピー、Alt+ yy で行をすべて選択してコピーする
 Alt & y::
   Keywait, y, U
   Keywait, y, D T0.2
@@ -93,6 +94,15 @@ Alt & y::
     send, {Home}{LShift Down}{End}{LShift Up}^c
   }
   return
+
+; RAlt + [l][;][p][.] で [left][right][up][down]
+  ; >!' はあらゆるキーで試したが動作しなかった為、[l][;][p][.]を[left][right][up][down]をした
+
+>!`;::send, {Right}
+>!p::send, {Up}
+>!.::send, {Down}
+>!l::send, {Left}
+
 
 ; Alt + p でペースト
 !p::send,^v
