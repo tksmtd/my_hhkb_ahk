@@ -96,7 +96,7 @@ Alt & y::
   return
 
 ; RAlt + [l][;][p][.] で [left][right][up][down]
-  ; >!' はあらゆるキーで試したが動作しなかった為、[;]['][[][/]はやめて、[l][;][p][.]を[left][right][up][down]をした
+  ; >!' はあらゆるキーで試したが動作しなかった為、[;]['][[][/]はやめて、[l][;][p][.]を[left][right][up][down]とした
 
 >!`;::send, {Right}
 >!p::send, {Up}
@@ -106,6 +106,20 @@ Alt & y::
 
 ; Alt + p でペースト
 !p::send,^v
+
+!y::
+  Keywait, y, U
+  Keywait, y, D T0.2
+  If (ErrorLevel=1){	
+    send, ^c
+  } else {
+    send, {Home}{LShift Down}{End}{LShift Up}^c
+  }
+  return
+
+; Alt+4でAlt+F4
+ !4::send, {RAlt Down}{F4}{RAlt Up}
+
 
 ; ■■■Vivaldi上でのショートカット■■
 #IfWinActive ahk_exe vivaldi.exe

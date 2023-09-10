@@ -157,7 +157,7 @@ vk1d & v::
     Return
 
 
-; 無変換+dwで単語を削除する
+; 【使用不可】無変換+dwで単語を削除する
 ;; Todo: C-d,C-wが解決できない。
 
 ;; vk1d ::Send, ^{Left}+^{Right}{Backspace}
@@ -187,8 +187,6 @@ vk1d & d::
 ;■Optional
 ; 無変換+qでEsc
 vk1D & q:: send, {Esc}
-
-
 
 ; ■■■Vivaldi上でのショートカット■■
 #IfWinActive ahk_exe vivaldi.exe
