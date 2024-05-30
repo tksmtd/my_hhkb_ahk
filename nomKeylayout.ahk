@@ -22,6 +22,11 @@ Shift & F13::
 return
 
 
+; Ctrl + Space : Enter ちょっとうまく動かない模様
+; Ctrl & Space::Send, {Enter}
+
+; 無変換 + Space : Enter
+vk1d & Space::Send, {Enter}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; 共通設定
@@ -143,13 +148,14 @@ vk1d & y::
 ; 無変換+pでペーストする
 vk1d & p::Send, ^v
 
-; 無変換+vwで単語を選択する
+; 無変換+dwで単語を選択する
+  ; 何故か消えてしまう 
 vk1d & v::
-    Input,InputChar,C I L1 T2,{Esc},w
+    Input,InputChar,C I L1 T2,{Esc},v
     If ErrorLevel = Match
     {
-        If InputChar = w
-            Send,^{Left}+^{Right}
+       If InputChar = w
+            Send,{Shift Down}+^{Right}, {Shift Up}
     }
     Return
 
@@ -180,6 +186,8 @@ vk1d & d::
     send, {Home}{LShift Down}{End}{Del}{LShift Up}{BS}{Home}
   }
   return
+
+
 
 ;■Optional
 ; 無変換+qでEsc
