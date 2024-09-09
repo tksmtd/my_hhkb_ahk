@@ -71,6 +71,11 @@ vk1d & j::send, {Blind}{Down}
 vk1d & l::send, {Blind}{Right}
 vk1d & h::send, {Blind}{Left}
 
+; 無変換+cでbackspace
+vk1d & c::send, {Backspace}
+; 無変換+eでEnter
+vk1d &  e::send, {Enter}
+
 ; 無変換+d, 無変換+uで一気に移動する
 ; vk1d & d::send, {Blind}{PgDn} => 無変換+ddの項目に記載
 vk1d & u::send, {Blind}{PgUp}
@@ -158,6 +163,8 @@ vk1d & v::
             Send,{Shift Down}+^{Right}, {Shift Up}
     }
     Return
+
+
 
 
 ; 無変換+dwで単語を削除する
