@@ -73,8 +73,6 @@ vk1d & h::send, {Blind}{Left}
 
 ; 無変換+cでbackspace
 vk1d & c::send, {Backspace}
-; 無変換+eでEnter
-vk1d &  e::send, {Enter}
 
 ; 無変換+d, 無変換+uで一気に移動する
 ; vk1d & d::send, {Blind}{PgDn} => 無変換+ddの項目に記載
