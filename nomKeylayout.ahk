@@ -23,10 +23,13 @@ return
 
 
 ; Ctrl + Space : Enter ちょっとうまく動かない模様
-; Ctrl & Space::Send, {Enter}
+Ctrl & Space::Send, {Enter}
 
 ; 無変換 + Space : Enter
 vk1d & Space::Send, {Enter}
+
+; Ctrl + 無変換 : Enter 実験
+^vk1d::Send, {Enter}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; 共通設定
