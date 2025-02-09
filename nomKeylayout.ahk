@@ -23,7 +23,8 @@ return
 
 
 ; Ctrl + Space : Enter ちょっとうまく動かない模様
-Ctrl & Space::Send, {Enter}
+; なぜかctrlが2回押されてしまいcliborと競合するのでX
+; Ctrl & Space::Send, {Enter}
 
 ; 無変換 + Space : Enter
 vk1d & Space::Send, {Enter}
@@ -77,8 +78,8 @@ vk1d & h::send, {Blind}{Left}
 ; 無変換+cでbackspace
 vk1d & c::send, {Backspace}
 
-; 無変換+d, 無変換+uで一気に移動する
-; vk1d & d::send, {Blind}{PgDn} => 無変換+ddの項目に記載
+; 無変換+uで一気に移動する
+; vk1d & d::send, {Blind}{PgDn}
 vk1d & u::send, {Blind}{PgUp}
 
 ; 無変換+wで単語を進む
@@ -119,6 +120,10 @@ vk1d & i::
   }
   Return
 
+;  無変換+Shift+O で・
+
+
+
 ; 無変換+gで最後へ、ggで先頭へ
 vk1d & g::
   Keywait, g, U
@@ -134,6 +139,10 @@ vk1d & g::
 
 ; 無変換+oで行を追加
 vk1d & o::send, {End}{Enter}
+
+; 無変換+shift+oで「・」
+; vk1d & shift & o::send, ・
+;    ■日本語コードがめんどくさい可能性..
 
 ; 無変換+xで前の1文字を削除
 vk1D & x:: send, {Right}{BS}
@@ -183,13 +192,13 @@ vk1d & v::
 ;     }
 ;     Return
 
-; 無変換+dで下へ一気に移動、無変換+ddで1行削除
+; 無変換+dでbackspace、無変換+ddで1行削除
 vk1d & d::
   Keywait, d, U
   Keywait, d, D T0.2
   If (ErrorLevel=1){
-    ; d一気に下に移動する
-     send, {Blind}{PgDn}
+    ; dでbackspace
+     send, {BS}
   } else {
     send, {Home}{LShift Down}{End}{Del}{LShift Up}{BS}{Home}
   }
