@@ -120,9 +120,6 @@ vk1d & i::
   }
   Return
 
-;  無変換+Shift+O で・
-
-
 
 ; 無変換+gで最後へ、ggで先頭へ
 vk1d & g::
@@ -137,8 +134,16 @@ vk1d & g::
   }
   return
 
-; 無変換+oで行を追加
-vk1d & o::send, {End}{Enter}
+; 無変換+oで行を追加 無変換+shift+oで・(/)
+; vk1d & o::send, {End}{Enter}
+
+vk1d & o::
+  if GetKeyState("Shift") {
+    Send /
+    return
+  }
+  Send {End}{Enter}
+  return
 
 ; 無変換+shift+oで「・」
 ; vk1d & shift & o::send, ・
@@ -161,7 +166,7 @@ vk1d & y::
   return
 
 ; 無変換+pでペーストする
-vk1d & p::Send, ^v
+; vk1d & p::Send, ^v
 
 ; 無変換+dwで単語を選択する
   ; 何故か消えてしまう 
