@@ -96,8 +96,12 @@ vk1d & b::send, {Blind}^{Left}
 vk1d & 0::send, {Blind}{Home}
 vk1d & a::send, {Blind}{End}
 
-; 無変換+iで行の最初の文字へ
+; 無変換+i: 行の最初の文字へ, 無変換+shift+i: ー(-)
 vk1d & i::
+  if GetKeyState("Shift") {
+    Send -
+    return
+  }
   ; 退避
   clipboard_backup = %ClipboardAll%
   ; カーソルが先頭になるように、
