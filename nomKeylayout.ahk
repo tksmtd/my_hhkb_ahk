@@ -172,14 +172,15 @@ vk1d & y::
 ; 無変換+pでペーストする
 ; vk1d & p::Send, ^v
 
-; 無変換+dwで単語を選択する
+; 無変換+vwで単語を選択する
   ; 何故か消えてしまう 
 vk1d & v::
     Input,InputChar,C I L1 T2,{Esc},v
     If ErrorLevel = Match
     {
        If InputChar = w
-            Send,{Shift Down}+^{Right}, {Shift Up}
+            ; Send,{Shift Down}+^{Right}, {Shift Up}
+            Send {Shift Down}+^{Left}+^{Right}, {Shift Up}  ;うまく動かない 
     }
     Return
 
