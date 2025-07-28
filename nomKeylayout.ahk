@@ -180,7 +180,7 @@ vk1d & v::
     {
        If InputChar = w
             ; Send,{Shift Down}+^{Right}, {Shift Up}
-            Send {Shift Down}+^{Left}+^{Right}, {Shift Up}  ;うまく動かない 
+            Send ^{Left}+^{Right}  ; 動かない
     }
     Return
 
