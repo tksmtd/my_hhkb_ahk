@@ -21,17 +21,6 @@ Shift & F13::
 	}
 return
 
-
-; Ctrl + Space : Enter ちょっとうまく動かない模様
-; なぜかctrlが2回押されてしまいcliborと競合するのでX
-; Ctrl & Space::Send, {Enter}
-
-; 無変換 + Space : Enter
-vk1d & Space::Send, {Enter}
-
-; Ctrl + 無変換 : Enter 実験
-^vk1d::Send, {Enter}
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; 共通設定
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -66,6 +55,22 @@ MButton & WheelUp::WheelLeft
 ; win+ctrl+h, win+ctrl+l でデスクトップを切り替え
 #^h::send, #^{Left}
 #^l::send, #^{Right}
+
+; ■■■General■■■
+; 無変換+r でEnter
+vk1d & r::Send, {Enter}
+
+; Ctrl+Space : Enter ちょっとうまく動かない模様
+; なぜかctrlが2回押されてしまいcliborと競合するのでX
+; Ctrl & Space::Send, {Enter}
+
+; 無変換+Space : Enter
+vk1d & Space::Send, {Enter}
+
+; Ctrl+無変換 : Enter 実験
+^vk1d::Send, {Enter}
+
+
 
 
 ; ■■■無変換+でvim keybind■■■
@@ -180,7 +185,7 @@ vk1d & v::
     {
        If InputChar = w
             ; Send,{Shift Down}+^{Right}, {Shift Up}
-            Send ^{Left}+^{Right}  ; 動かない
+            Send ^{Left}+^{Right}
     }
     Return
 
